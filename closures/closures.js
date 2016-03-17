@@ -36,4 +36,22 @@ firstNameJohn('Tucker');
 // 6. Create a storyWriter function that returns an object with two methods.
 // One method, addWords adds a word to your story and returns the story while
 // the other one, erase, resets the story back to an empty string.
+var storyWriter = function() {
+    var story = "";
+
+    return {
+        addWords: function(newPhrase) {
+            story += newPhrase;
+            console.log(story);
+            return story;
+        },
+        resetStory: function() { story = ""}
+    }
+}//storyWriter
+
+var storyOfMyLife = storyWriter();
+storyOfMyLife.addWords('My code broke.'); // 'My code broke.'
+storyOfMyLife.addWords('I ate some ice cream.'); //'My code broke. I ate some ice cream.'
+storyOfMyLife.resetStory();
+
 
